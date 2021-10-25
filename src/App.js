@@ -7,11 +7,16 @@ import Song from './components/Song'
 function App () {
   const [songs, setSongs] = useState(songsData);
   const [currentSong, setCurrentSong] = useState(songs[0])
+  const [isPlaying, setIsPlaying] = useState(false)
   
   return (
     <div className="App">
       <Song currentSong={currentSong} />
-      <Player currentSong={currentSong} />
+      <Player 
+        currentSong = {currentSong} 
+        isPlayin = {isPlaying}
+        setIsPlaying = {setIsPlaying}
+      />
     </div> 
   )
 }

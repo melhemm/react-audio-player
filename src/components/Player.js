@@ -1,15 +1,17 @@
 import {useRef} from 'react'
 
-const Player = ({currentSong}) => {
+const Player = ({currentSong, isPlaying, setIsPlaying}) => {
   const audioRef = useRef(null)
+
   // Play song event handler
   const playSongHandler = () => {
-    document.getElementById("soundTrack").play()
-    // let playCurrentSong = audioRef.current
-    // console.log(playCurrentSong);
-    // console.log(audioRef.current);
-    // debugger
-    // audioRef.current.play();
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(!isPlaying)
+    } else {
+      audioRef.current.play()
+      setIsPlaying(!isPlaying)
+    }
   }
 
   return (
@@ -31,8 +33,10 @@ const Player = ({currentSong}) => {
           className="fas fa-caret-square-right fa-2x"
         />
       </div>
-      <audio ref={audioRef} id={"soundTrack"}
-      src={currentSong.audio}>
+      <audio 
+        ref={audioRef} 
+        src={currentSong.audio}
+      >
       </audio>
     </div>
   )

@@ -62,7 +62,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
           className="fas fa-caret-square-left fa-2x"
         />
         <i 
-          className="fas fa-play fa-2x" 
+          className={isPlaying ? "fas fa-pause fa-2x" : "fas fa-play fa-2x"} 
           onClick={playSongHandler}
         />
         <i 

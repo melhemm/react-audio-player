@@ -1,5 +1,3 @@
-import { useState } from 'react/cjs/react.development';
-
 const Player = ({
   currentSong, 
   isPlaying, 

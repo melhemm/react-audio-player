@@ -1,3 +1,5 @@
+import { useState } from 'react/cjs/react.development';
+
 const Player = ({
   currentSong, 
   isPlaying, 
@@ -35,7 +37,7 @@ const Player = ({
         <p>{getTime(songInfo.currentTime)}</p>
         <input 
           min={0} 
-          max={songInfo.duration || 0} 
+          max={songInfo.duration} 
           value={songInfo.currentTime} 
           type="range"
           onChange={dragHandler}
